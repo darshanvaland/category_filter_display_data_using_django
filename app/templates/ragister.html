@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>User Register Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/ragister.css' %}"> 
+    {% comment %} <link rel="stylesheet" href="{% static '' %}">  {% endcomment %}
+</head>
+<body bgcolor="#f8f9fa">
+    
+    <div>
+        <div class="log">
+        <h1 class="login">Register form</h1>
+        </div>
+    </div>
+<div class="parent">
+    <form  method="POST">
+        {% csrf_token %} 
+    <div class="box">
+
+        <div class="user">
+            <label for="text"> <b> Name</b></label>
+            
+            <input type="name" placeholder="Username" name="name" class="mail">
+            </div>
+        <div class="user">
+        <label for="email"> <b>  Email</b></label>
+        
+        <input type="email" placeholder=" Email" name="email" class="mail">
+        </div>
+        <div class="user">
+            <label for="number"> <b> Contact no</b></label>
+            
+            <input type="number" placeholder="number" name="contact" class="mail">
+            </div>
+    
+        <div class="pass">
+        <label for="password"><b>Password</b></label>
+        
+        <input type="password" placeholder="Password" class="mail" name="password">
+        </div>
+    
+        
+        <div>
+        <button class="btn" type="submit"><b> Login now</b></button>
+        </div>
+    </div>
+   
+    
+    </form>
+</div>
+
+{% if m %}
+<script>alert("{{m}}")</script>
+{% endif %}
+
+</body>
+</html>
